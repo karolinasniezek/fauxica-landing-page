@@ -46,8 +46,18 @@ nav a.active::before {
   color: #000000;
   border-bottom: 2px solid #000000;
   bottom: -6px;
-
 } 
+
+nav ul li a:before {
+  position: absolute;
+  content: '';
+  width: 0%;
+  height: 2px;
+  color: #000000;
+  border-bottom: 2px solid rgb(122, 122, 122);
+  bottom: -6px;
+  transition: width .3s;
+}
 
 main {
   display: flex;
@@ -75,4 +85,177 @@ main {
   font-size: 18px;
   color: #000000;
   margin-top: 20px;
+}
+
+.cta-buttons {
+  margin: 34px 0;
+}
+
+.cta-buttons, .secondary-cta {
+  display: flex;
+  gap: 38px;
+}
+
+.primary-cta {
+  background-color: #F2F0DF;
+  padding: 14px 25px;
+  border-radius: 19px;
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.secondary-cta {
+  font-size: 18px;
+  text-decoration: none;
+  color: #000000;
+  padding: 14px 0;
+  justify-content: center;
+  align-items: center;
+  transition: transform .3s;
+}
+
+.secondary-cta img {
+  width: 20px;
+}
+
+.news {
+  display: flex;
+  gap: 55px;
+  padding: 33px;
+  border: 1px solid #000000;
+  border-radius: 19px;
+  position: relative;
+}
+
+.news::before {
+  position: absolute;
+  content: '';
+  background: url(./public/images/confetti.svg);
+  width: 100px;
+  height: 100px;
+  top: -20px;
+  left: -20px;
+  z-index: 2;
+}
+
+.employees {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 33px;
+  line-height: 100%;
+  font-weight: lighter;
+  font-family: 'Poppins', sans-serif;
+}
+
+.details {
+  font-size: 14px;
+  color: #000000;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+/* Right column gallery */
+
+.images-section {
+  display: grid;
+  gap: 29px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: 
+    "left right"
+    "left right-bottom"
+}
+
+.card {
+  border-radius: 19px;
+  padding: 11px;
+  display: flex;
+  align-items: end;
+  background-size: 150%;
+  transition: background-size .6s;
+}
+
+.card1 {
+  grid-area: left;
+  background: url(./public/images/clothing1.jpg) no-repeat;
+  background-size: cover;
+}
+
+.card1:before {
+  position: absolute;
+  content: "";
+  background: url(./public/images/tag.svg) no-repeat;
+  width: 100%;
+  height: 100%;
+  top: 20px;
+  left: -30px;
+  pointer-events: none;
+} 
+
+.card2 {
+  background: url(./public/images/clothing2.jpg) no-repeat;
+  background-size: cover;
+
+}
+
+.card3 {
+  background-image: url(./public/images/clothing3.jpg);
+}
+
+.card-details {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 17px;
+  gap: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.8s;
+}
+
+.product-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000;
+  text-decoration: none;
+}
+
+.card-details p {
+  font-size: 14px;
+  color: #000000;
+  margin: 0;
+}
+
+.product-price {  
+  font-size: 17px;
+  font-weight: regular;
+  color: #000000;
+}
+
+/* Micro animations */
+.nav-list li a:hover:before {
+  width: 25%;
+}
+
+.primary-cta:hover {
+  background: #e2e1bd;
+}
+
+.secondary-cta:hover {
+  text-decoration: underline;
+}
+
+.secondary-cta:hover img {
+  transform: translateX(10px);
+}
+
+.card:hover {
+  background-size: 160%;
+}
+
+.card:hover .card-details {
+  transform: translateY(-20px);
 }
